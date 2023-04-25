@@ -1,0 +1,35 @@
+{
+  "name": "api_rest",
+  "version": "1.0.0",
+  "description": "Ejercicio 4",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm run dev",
+    "tsc": "tsc --watch",
+    "dev": "nodemon ./dist/app.js",
+    "start": "tsc && node ./dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebas1197/Ejercicio_4.git"
+  },
+  "keywords": [
+    "Ejercicio",
+    "4",
+    "Api",
+    "rest"
+  ],
+  "author": "Ing. Sebastian LG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebas1197/Ejercicio_4/issues"
+  },
+  "homepage": "https://github.com/sebas1197/Ejercicio_4#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.5",
+    "nodemon": "^2.0.22"
+  }
+}
