@@ -77,4 +77,22 @@ export const post_book = async (req: Request, res: Response) => {
 }
 
 
-
+export const put_book = async (req: Request, res: Response) => {
+    try {
+        const id = req.params.id
+        const {_id, ...rest} = req.body
+    
+        const book = await Book.findByIdAndUpdate(id, rest)
+    
+        res.status(205).json({
+            book,
+            msg: 'Book updated'
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            msg: 'Error updating book',
+            error
+        })
+    }
+}
