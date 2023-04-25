@@ -96,3 +96,21 @@ export const put_book = async (req: Request, res: Response) => {
         })
     }
 }
+
+export const delete_book = async (req: Request, res: Response) => {
+    try {
+        const id = req.params.id
+
+        await Book.findByIdAndDelete(id)
+    
+        res.status(200).json({
+            msg: 'Book deleted'
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            msg: 'Error deleting book',
+            error
+        })
+    }
+}
