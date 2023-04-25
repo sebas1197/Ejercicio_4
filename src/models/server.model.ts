@@ -6,10 +6,12 @@ class Server{
 
     private app: Application
     private port: string
+    private book_path: string
 
     constructor(){
         this.app = express()
         this.port = process.env.PORT || '3000'
+        this.book_path = '/api/book'
 
         this.connect_db()
         this.middlewares()
@@ -17,6 +19,7 @@ class Server{
     }
 
     routes(){
+        this.app.use(this.book_path, require('../routes/book.routes'))
     }
 
     listen(){
